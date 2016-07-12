@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import * as Actions from '../actions/commonActions'
+
 export default class Toast extends Component {
+
+	constructor(props){
+		super(props);
+		this.state = {
+			isShowing: false
+		}
+	}
+
+	componentWillReceiveProps(nextProps){
+		if(this.state.isShowing) return;
+	    if(nextProps.show){
+	    	this.setState({isShowing: true});
+	    	setTimeout(() => {
+	    		this.props.dispatch(Actions.hideToast());
+	    		this.setState({isShowing: false});
+	    	}, nextProps.delay);
+	    }
+	  }
+
 	render() {
 		let { show, info } = this.props;
 		return (

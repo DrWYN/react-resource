@@ -10,7 +10,8 @@ import Loader from '../common/loader';
 import Toast from '../common/toast';
 
 import Home from './home';
-import Self from './self';
+import ShowLoader from './ShowLoader';
+
 
 let store = createStore(reducers);
 
@@ -39,7 +40,7 @@ export default class Root extends Component {
 				<Router history={hashHistory}>
 					<Route component={App}>
 						<Route path="/" component={Home} />
-						<Route path="self" component={Self}/>
+						<Route path="showloader" component={ShowLoader}/>
 					</Route>
 				</Router>
 			</Provider>

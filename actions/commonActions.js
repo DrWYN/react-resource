@@ -12,7 +12,7 @@ export function showLoad(isShow=false) {
 	}
 }
 
-export function showToast(delay=1,info={}){
+export function showToast(info={},delay=500){
 	return {
 		type: SHOW_TOAST,
 		show: true,
