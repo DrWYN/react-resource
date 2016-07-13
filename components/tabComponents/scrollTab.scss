@@ -1,0 +1,25 @@
+.tabContainer{
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 100%;
+	-webkit-overflow-scrolling:touch;
+	&::-webkit-scrollbar {
+		display: none;
+	 }
+	background-image: url('./images/time_bkg.png');
+	background-size: 23% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #fff;
+	.sTab{
+		text-align: center;
+		box-sizing: border-box;
+		display: inline-block;
+		overflow: hidden;
+		font-size: 16px;
+		height: 56px;
+	}
+	.sTabText{
+		margin-top: 10px;
+	}
+}

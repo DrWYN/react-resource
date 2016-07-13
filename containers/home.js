@@ -13,7 +13,8 @@ export default class Home extends Component{
 		return (
 			<div>
 				<div>Home</div>
-				<Link to="/showloader">showLoader</Link>
+				<Link to="/showloader">showLoader</Link>	<br/>
+				<Link to="/showtab">showTab</Link>
 			</div>
 		);
 	}

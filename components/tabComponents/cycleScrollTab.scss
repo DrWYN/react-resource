@@ -1,0 +1,20 @@
+.tabContainer{
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 100%;
+	-webkit-overflow-scrolling:touch;
+	&::-webkit-scrollbar {
+		display: none;
+	 }
+	.sTab{
+		text-align: center;
+		box-sizing: border-box;
+		display: inline-block;
+		overflow: hidden;
+		font-size: 16px;
+		height: 56px;
+	}
+	.sTabText{
+		margin-top: 10px;
+	}
+}

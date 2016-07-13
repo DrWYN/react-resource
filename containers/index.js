@@ -11,6 +11,7 @@ import Toast from '../common/toast';
 
 import Home from './home';
 import ShowLoader from './ShowLoader';
+import ShowTab from './ShowTab';
 
 
 let store = createStore(reducers);
@@ -41,6 +42,7 @@ export default class Root extends Component {
 					<Route component={App}>
 						<Route path="/" component={Home} />
 						<Route path="showloader" component={ShowLoader}/>
+						<Route path="showtab" component={ShowTab}/>
 					</Route>
 				</Router>
 			</Provider>

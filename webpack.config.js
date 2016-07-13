@@ -34,6 +34,11 @@ module.exports = {
                 test: /\.scss$/, 
                 loader: 'style!css!sass?sourceMap=true', 
                 include: /styles/ 
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                exclude: /node_modules/,
+                loader: 'url?limit=8192&name=./images/[name].[ext]'
             }
         ]
     },
