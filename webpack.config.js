@@ -1,28 +1,38 @@
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 module.exports = {
-    entry: [
-      'webpack/hot/only-dev-server',
-      "./app.js"
-    ],
+    devtool: 'eval-source-map',
+    entry: __dirname + "/app.js",
+
     output: {
-        path: './build',
+        path: __dirname + '/build',
         filename: "bundle.js"
     },
     module: {
         loaders: [
             { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/},
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query:{presets:['es2015','react']}},
-            { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') }
+            {test: /\.scss$/, loader: 'style!css?modules!postcss!sass', exclude: /node_modules/}
         ]
     },
-    resolve:{
-        extensions:['','.js','.json','.scss']
-    },
+    postcss: [autoprefixer({ browsers: [ '> 5%', 'last 2 versions' ] })],
+
     plugins: [
-      new webpack.NoErrorsPlugin(),
-      new ExtractTextPlugin('./main.css', {
-            allChunks: true
-        })
-    ]
+        new HtmlWebpackPlugin({
+            template: __dirname + "/index.html"
+        }),
+        new webpack.HotModuleReplacementPlugin()
+    ],
+
+    devServer: {
+        contentBase: "./public",
+        colors: true,
+        historyApiFallback: true,
+        inline: true,
+        hot: true
+    }
 };

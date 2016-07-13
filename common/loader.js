@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
+import styles from '../styles/common.scss';
+
 export default class Loader extends Component{
 	render(){
 		if(!this.props.isShow) return null;
 		return (
-			<div className="common-loader">
-				<div className="loader"></div>
+			<div className={styles.commonLoader}>
+				<div className={styles.loader}></div>
 			</div>
 		);
 	}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import styles from '../styles/common.scss';
+
 import * as Actions from '../actions/commonActions'
 
 export default class Toast extends Component {
@@ -26,7 +28,7 @@ export default class Toast extends Component {
 	render() {
 		let { show, info } = this.props;
 		return (
-			<div className={"toast " + (show ? "show" : "hide")}>
+			<div className={styles.toast + " " + (show ? styles.show : styles.hide)}>
 					{info.msg}
 				<div></div>
 			</div>
