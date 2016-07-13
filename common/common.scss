@@ -74,12 +74,14 @@
 	color: #FFF;
 	padding: 20px;
 	transition: all 0.3s;
-	&.show{
-		z-index: 101;
-		opacity: .6;
-	}
-	&.hide{
-		z-index: -10;
-		opacity: 0;
-	}
+}
+.toastShow{
+  composes: toast;
+  z-index: 101;
+  opacity: .6;
+}
+.toastHide{
+  composes: toast;
+  z-index: -10;
+  opacity: 0;
 }

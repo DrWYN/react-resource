@@ -1,0 +1,76 @@
+	//如果用CSS Modules，设置全局，可以加:global(). 如：:golbal(flex-1)
+
+	.flex{
+		  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+		  display: -ms-flexbox;      /* TWEENER - IE 10 */
+		  display: -webkit-flex;     /* NEW - Chrome */
+		  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */	  
+	}
+	.flex-column{
+		-webkit-box-direction: normal;
+	    -webkit-box-orient: vertical;
+	    -moz-flex-direction: column;
+	    -webkit-flex-direction: column;
+	    flex-direction: column;
+	}
+	.flex-center{
+		-webkit-box-pack: center;
+	    -moz-justify-content: center;
+	    -webkit-justify-content: center;
+	    justify-content: center;
+
+	    -webkit-box-align: center;
+	    -moz-align-items: center;
+	    -webkit-align-items: center;
+	    align-items: center;
+	}
+	.flex-center-h{
+		-webkit-box-align: center;
+	    -moz-align-items: center;
+	    -webkit-align-items: center;
+	    align-items: center;
+	}
+	.flex-row-reverse{
+		-webkit-box-pack: end;
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: horizontal;
+		-moz-flex-direction: row-reverse;
+		-webkit-flex-direction: row-reverse;
+		flex-direction: row-reverse;
+	}
+	.flex-between{
+		-webkit-box-pack: justify;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+	}
+	// .flex-left{
+	// 	-webkit-box-pack: start;
+	//     -moz-justify-content: flex-start;
+	//     -webkit-justify-content: flex-start;
+	//     justify-content: flex-start;
+	// }
+	// .flex-right{
+	// 	-webkit-box-pack: end;
+	//     -moz-justify-content: flex-end;
+	//     -webkit-justify-content: flex-end;
+	//     justify-content: flex-end;
+	// }
+	// .flex-item-center{
+	// 	-webkit-box-align: center;
+	//     -moz-align-items: center;
+	//     -webkit-align-items: center;
+	//     align-items: center;
+	// }
+
+	//flex-1 ... flex-5
+	@for $i from 1 to 6{
+		.flex-#{$i}{
+			-webkit-box-flex: $i;      /* OLD - iOS 6-, Safari 3.1-6 */
+		  	-moz-box-flex: $i;         /* OLD - Firefox 19- */
+		  	-webkit-flex: $i;          /* Chrome */
+		  	-ms-flex: $i;              /* IE 10 */
+		  	flex: $i;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		}
+	}

@@ -14,12 +14,30 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/},
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query:{presets:['es2015','react']}},
-            {test: /\.scss$/, loader: 'style!css?modules!postcss!sass', exclude: /node_modules/}
+            {
+                 test: /\.js?$/, 
+                 loaders: ['react-hot', 'babel'], 
+                 exclude: /node_modules/ 
+             },
+            { 
+                test: /\.js$/, 
+                exclude: /node_modules/, 
+                loader: 'babel-loader', 
+                query: { presets: ['es2015', 'react'] } 
+            },
+            { 
+                test: /\.scss$/, 
+                loader: 'style!css?modules&localIdentName=[path][name]__[local]!postcss!sass?sourceMap=true', 
+                exclude: [/node_modules/,/styles/] 
+            },
+            { 
+                test: /\.scss$/, 
+                loader: 'style!css!sass?sourceMap=true', 
+                include: /styles/ 
+            }
         ]
     },
-    postcss: [autoprefixer({ browsers: [ '> 5%', 'last 2 versions' ] })],
+    postcss: [autoprefixer({ browsers: ['> 5%', 'last 2 versions'] })],
 
     plugins: [
         new HtmlWebpackPlugin({

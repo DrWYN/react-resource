@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import styles from '../styles/common.scss';
+import styles from './common.scss'
 
 export default class Loader extends Component{
 	render(){
