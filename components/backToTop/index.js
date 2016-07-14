@@ -1,9 +1,9 @@
 /**
  * 返回最顶
  */
-import './style.scss';
+import styles from './style.scss';
 import React, { Component } from 'react';
-import { getRAF } from '../libs/util';
+import { getRAF } from '../../libs/util';
 
 export default class extends Component {
   constructor(props) {
@@ -67,7 +67,7 @@ export default class extends Component {
       opacity: this.state.opacity
     };
     return (
-      <section style={myStyle} className="zl-btt" onClick={this.handleGotoTop}>↑</section>
+      <section style={myStyle} className={styles.zlBtt} onClick={this.handleGotoTop}>↑</section>
     );
   }
 }

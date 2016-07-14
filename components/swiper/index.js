@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-import './style.scss';
-import { getRAF, getStylePrefix, isSupportTransform3D, loadImg, isEqual } from '../libs/util';
+import styles from './style.scss';
+import { getRAF, getStylePrefix, isSupportTransform3D, loadImg, isEqual } from '../../libs/util';
 // 轮播组件
 /*
   index: 0
@@ -13,17 +13,15 @@ import { getRAF, getStylePrefix, isSupportTransform3D, loadImg, isEqual } from '
   interval: 时间间隔（s)
 */
 export default class Swiper extends Component {
-  static defaultProps = {
-    index: 0,
-    dots: true,
-    autoplay: false,
-    canSwiper: true,
-		dir: 'h',
-    interval: 3,
-    touch: true,
-  }
+
   constructor(props) {
     super(props);
+
+    this.state = {
+      currentIndex: 0,
+      style: {}
+    }
+
 		this.canTouch = true;
     this.canSwiper = false;
 		this.threshold = 5;
@@ -57,13 +55,10 @@ export default class Swiper extends Component {
     this.transitionDuration = `${prefix}ransitionDuration`;
     this.transitionEnd = prefix === 't' ? 'transitionend' : `${prefix}ransitionEnd`;
   }
-  state = {
-    currentIndex: 0,
-    style: {}
-  }
+  
   componentWillMount() {
     const { className, dir } = this.props;
-    this.className = dir === 'h' ? 'swiper-wraper' : 'swiper-wraper swiper-vertical';
+    this.className = dir === 'h' ? styles.swiperWraper : styles.swiperVertical;
     if (className) {
       this.className += ` ${className}`;
     }
@@ -332,8 +327,8 @@ export default class Swiper extends Component {
     const { dots, children } = this.props;
     if (!dots || React.Children.count(children) <= 1) return false;
     return (
-      <ul className="indicators">{React.Children.map(children, (child, index) =>
-          (<i key={index} className={this.state.currentIndex === index ? 'current' : ''}></i>)
+      <ul className={styles.indicators}>{React.Children.map(children, (child, index) =>
+          (<i key={index} className={this.state.currentIndex === index ? styles.current : ''}></i>)
         )}
       </ul>
     );
@@ -342,13 +337,23 @@ export default class Swiper extends Component {
     return (
       <div className={this.className} onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd} onTouchCancel={this.handleTouchEnd}>
         {this.renderIndicators()}
-        <div ref={ref => this.swiperContainer = ref} className="swiper " style={this.state.style}>
+        <div ref={ref => this.swiperContainer = ref} className={styles.swiper} style={this.state.style}>
           {this.renderChildren()}
         </div>
       </div>
     );
   }
 }
+
+Swiper.defaultProps = {
+    index: 0,
+    dots: true,
+    autoplay: false,
+    canSwiper: true,
+    dir: 'h',
+    interval: 3,
+    touch: true,
+  }
 
 Swiper.propTypes = {
   index: PropTypes.number,

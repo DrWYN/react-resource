@@ -1,5 +1,5 @@
 
-.swiper-wraper {
+.swiperWraper {
   display: block;
   margin: 0 auto;
   position: relative;
@@ -58,7 +58,10 @@
       }
     }
   }
-  &.swiper-vertical{
+}
+
+.swiperVertical{
+    composes: swiperWraper;
     height: auto;
     .swiper {
       flex-direction: column;
@@ -72,7 +75,6 @@
       transform: translate(0,-50%);
     }
   }
-}
 
 
 // 图片加载
