@@ -14,6 +14,8 @@ import ShowLoader from './ShowLoader';
 import ShowTab from './ShowTab';
 import ShowSwiper from './ShowSwiper';
 
+import ScrollTo from '../components/scrollTo';
+
 
 let store = createStore(reducers);
 
@@ -45,6 +47,7 @@ export default class Root extends Component {
 						<Route path="showloader" component={ShowLoader}/>
 						<Route path="showtab" component={ShowTab}/>
 						<Route path="showswiper" component={ShowSwiper}/>
+						<Route path="scrollto" component={ScrollTo}/>
 					</Route>
 				</Router>
 			</Provider>
