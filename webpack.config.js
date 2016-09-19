@@ -2,6 +2,8 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+
 
 
 module.exports = {
@@ -10,7 +12,7 @@ module.exports = {
 
     output: {
         path: __dirname + '/build',
-        filename: "bundle.js"
+        filename: '[name]-[hash].js'
     },
     module: {
         loaders: [
@@ -51,7 +53,12 @@ module.exports = {
         new ExtractTextPlugin("style-[contenthash].css", {
           allChunks: true
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin(['dist', 'build'], {
+          root: __dirname,
+          verbose: true, 
+          dry: false
+        })
     ],
 
     devServer: {
