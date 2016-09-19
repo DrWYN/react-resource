@@ -1,0 +1,62 @@
+.tabContainer{
+	.show{
+		display: block;
+	}
+	.hide{
+		display: none;
+	}
+	.itemsContainer{
+		overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        -webkit-overflow-scrolling:touch;
+        &::-webkit-scrollbar {
+				display: none;
+    		}
+	.sTabs {
+
+	    .sTab {
+	      text-align: center;
+	      box-sizing: border-box;
+	      display: inline-block;
+	      overflow: hidden;
+	      font-size: 14px;
+	      .sTabText {
+	        border-bottom: 2px solid;
+	        padding: 5px 0;
+	        .sTabTitle .sTabSubtitle{
+	        	text-align: center;
+		        height: 25px;
+		        line-height: 25px;
+		        overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+	        }
+	        .sTabSubtitle{
+	        	font-size: 12px;
+	        }
+	      }
+	    }
+	  }
+	}
+	.moreIcon{
+		height: 25px;
+		line-height: 25px;
+		text-align: center;
+	}
+	.itemsUl{
+		position: absolute;
+		width: 100%;
+		background-color: #fff;
+		li{
+			display: inline-block;
+			font-size: 12px;
+			width: 18%;
+			margin: 1%;
+			text-align: center;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+	}
+}

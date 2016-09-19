@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import ScrollerTab from '../components/tabComponents/ScrollerTab';
 import CycleScrollTab from '../components/tabComponents/CycleScrollTab';
+import UnfoldTab from '../components/tabComponents/UnfoldTab';
 
 export default class ShowTab extends Component{
 	constructor(props){
@@ -63,11 +64,27 @@ export default class ShowTab extends Component{
 		);
 	}
 
+	//可以展开的tab
+	renderUnfoldTab(){
+
+		let items = [{title: 'aaa', subTitle: '1.00'},{title: 'bbb', subTitle: '1.00'},{title: 'ccc', subTitle: '1.00'},
+		{title: 'ddd', subTitle: '1.00'},{title: 'eee', subTitle: '1.00'},{title: 'fff', subTitle: '1.00'},{title: 'fff', subTitle: '1.00'},{title: 'fff', subTitle: '1.00'}];
+		
+		return (
+			<div>
+				<UnfoldTab
+					index={0}
+					items={items}/>
+			</div>
+		);
+	}
+
 	render(){
 		return (
 			<div>
 				{this.renderScrollTab()}
 				{this.renderCycleScrollTab()}
+				{this.renderUnfoldTab()}
 			</div>
 		);
 	}

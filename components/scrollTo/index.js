@@ -15,6 +15,7 @@ export default class ScrollTo extends Component{
 	scrollToLetter(e){
 		let e_innerText = e.target.innerText;
 		let letters = document.querySelectorAll('article header.' + styles.letter);
+		//$('.d').scrollIntoView(true)
 		for(let i=0;i<letters.length;i++){
 			if(letters[i].innerText === e_innerText){
 				window.scrollTo(0, letters[i].offsetTop);

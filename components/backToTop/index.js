@@ -67,7 +67,7 @@ export default class extends Component {
       opacity: this.state.opacity
     };
     return (
-      <section style={myStyle} className={styles.zlBtt} onClick={this.handleGotoTop}>↑</section>
+      <section style={myStyle} className={styles['zl-btt']} onClick={this.handleGotoTop}>↑</section>
     );
   }
 }

@@ -26,9 +26,9 @@ module.exports = {
                 query: { presets: ['es2015', 'react'] } 
             },
             { 
-                test: /\.scss$/, 
-                loader: 'style!css?modules&localIdentName=[path][name]__[local]!postcss!sass?sourceMap=true', 
-                exclude: [/node_modules/,/styles/] 
+                test: /\.scss$/,  
+                loader: ExtractTextPlugin.extract('style','css?modules&localIdentName=[path][name]__[local]!postcss!sass?sourceMap=true'),
+                exclude: [/node_modules/,/styles/]
             },
             { 
                 test: /\.scss$/, 
@@ -47,6 +47,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: __dirname + "/index.html"
+        }),
+        new ExtractTextPlugin("style-[contenthash].css", {
+          allChunks: true
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
