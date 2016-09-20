@@ -1,0 +1,17 @@
+// 置顶
+.sticky {
+	position: -webkit-sticky !important;
+	z-index: 100;
+	top: 0;
+}
+.fixed {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	transform: translateZ(0);
+}
+.sticky-blank {
+	display: none;
+}
