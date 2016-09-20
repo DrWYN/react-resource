@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './common.scss'
 
-export default class Loader extends Component{
+class Loader extends Component{
 	render(){
 		if(!this.props.isShow) return null;
 		return (

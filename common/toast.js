@@ -5,7 +5,7 @@ import styles from './common.scss'
 
 import * as Actions from '../actions/commonActions'
 
-export default class Toast extends Component {
+class Toast extends Component {
 
 	constructor(props){
 		super(props);
