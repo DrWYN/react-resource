@@ -1,5 +1,6 @@
+//公共组件 util类
+
 import { Promise } from 'es6-promise';
-// import Global from './global';
 
 
 export const getMobileOS = () => {

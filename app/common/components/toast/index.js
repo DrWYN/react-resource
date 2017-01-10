@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import styles from './common.scss'
-
-import * as Actions from '../actions/commonActions'
+import styles from './style.scss';
 
 class Toast extends Component {
 
@@ -19,7 +17,7 @@ class Toast extends Component {
 	    if(nextProps.show){
 	    	this.setState({isShowing: true});
 	    	setTimeout(() => {
-	    		this.props.dispatch(Actions.hideToast());
+	    		bindActions.hideToast();
 	    		this.setState({isShowing: false});
 	    	}, nextProps.delay);
 	    }

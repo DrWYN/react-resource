@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import ScrollerTab from '../components/tabComponents/ScrollerTab';
-import CycleScrollTab from '../components/tabComponents/CycleScrollTab';
-import UnfoldTab from '../components/tabComponents/UnfoldTab';
+import ScrollerTab from 'common/components/tabComponents/ScrollerTab';
+import CycleScrollTab from 'common/components/tabComponents/CycleScrollTab';
+import UnfoldTab from 'common/components/tabComponents/UnfoldTab';
 
 export default class ShowTab extends Component{
 	constructor(props){

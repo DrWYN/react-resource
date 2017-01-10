@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Swiper from '../components/swiper';
+import {Component} from 'react';
+import Swiper from 'common/components/swiper';
 
 export default class ShowSwiper extends Component{
 	constructor(props){

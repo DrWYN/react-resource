@@ -1,0 +1,25 @@
+
+.toast{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 47%;
+	text-align: center;
+	border-radius: 10px;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background-color: #0a0b0c;
+	color: #FFF;
+	padding: 20px;
+	transition: all 0.3s;
+}
+.toastShow{
+  composes: toast;
+  z-index: 101;
+  opacity: .6;
+}
+.toastHide{
+  composes: toast;
+  z-index: -10;
+  opacity: 0;
+}

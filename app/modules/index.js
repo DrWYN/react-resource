@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
-import { Router, Route, Link, IndexRoute, Redirect } from 'react-router';
-import {hashHistory} from 'react-router';
+import { Component } from 'react';
+import { Router, Route, Link, IndexRoute, Redirect, useRouterHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createHashHistory } from 'history'
 
-import reducers from '../reducers';
-
-import Loader from '../common/loader';
-import Toast from '../common/toast';
+import Loader from 'common/components/loader';
+import Toast from 'common/components/toast';
 
 import Home from './home';
 import ShowLoader from './ShowLoader';
 import ShowTab from './ShowTab';
 import ShowSwiper from './ShowSwiper';
 
-import ScrollTo from '../components/scrollTo';
+import ScrollTo from 'common/components/scrollTo';
 
+import store from '../store';
 
-let store = createStore(reducers);
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
 class App extends Component{
 	constructor(props){
@@ -41,7 +39,7 @@ export default class Root extends Component {
 	render(){
 		return (
 			<Provider store={store}>
-				<Router history={hashHistory}>
+				<Router history={appHistory}>
 					<Route component={App}>
 						<Route path="/" component={Home} />
 						<Route path="showloader" component={ShowLoader}/>
