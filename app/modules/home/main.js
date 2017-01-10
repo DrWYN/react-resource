@@ -16,7 +16,8 @@ export default class Home extends Component{
 				<Link to="/showloader">showLoader</Link>	<br/>
 				<Link to="/showtab">showTab</Link>	<br/>
 				<Link to="/showswiper">showSwiper</Link>	<br/>
-				<Link to="/scrollto">scrollTo</Link>
+				<Link to="/scrollto">scrollTo</Link> <br/>
+				<Link to="/surroundAbsolute">surroundAbsolute</Link> <br/>
 			</div>
 		);
 	}

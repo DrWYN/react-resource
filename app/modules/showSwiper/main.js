@@ -12,7 +12,7 @@ export default class ShowSwiper extends Component{
 	}
 
 	renderImageSwiper(){
-		let items = [require('../testImgs/homeBanner.jpg'),require('../testImgs/luckyBanner.jpg'),require('../testImgs/successBanner.jpg')];
+		let items = [require('app/testImgs/homeBanner.jpg'),require('app/testImgs/luckyBanner.jpg'),require('app/testImgs/successBanner.jpg')];
 		return (
 			<Swiper touch={true} autoPlay={true}>
 				{

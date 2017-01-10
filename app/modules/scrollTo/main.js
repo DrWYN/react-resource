@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import BackToTop from '../backToTop';
+import {Component} from 'react';
+import BackToTop from 'common/components/backToTop';
 import styles from './style.scss';
 
 import cityData from './data';
