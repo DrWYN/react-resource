@@ -32,7 +32,10 @@ const routes = {
 				require('modules/showloader'),
 				require('modules/showswiper'),
 				require('modules/showtab'),
-				require('modules/surroundAbsolute')
+				require('modules/surroundAbsolute'),
+				require('modules/reactLazy'),
+				require('modules/reactLazy/lazy-img-router'),
+				require('modules/reactLazy/lazy-component-router')
 			])
 		}, 'dynamicRoutes')
 	}

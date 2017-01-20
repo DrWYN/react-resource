@@ -18,6 +18,7 @@ export default class Home extends Component{
 				<Link to="/showswiper">showSwiper</Link>	<br/>
 				<Link to="/scrollto">scrollTo</Link> <br/>
 				<Link to="/surroundAbsolute">surroundAbsolute</Link> <br/>
+				<Link to="/lazy-load">reactLazy</Link> <br/>
 			</div>
 		);
 	}
