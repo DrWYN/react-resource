@@ -259,12 +259,6 @@ export default class App extends Component {
             </tr>
           </tbody></table>
         </section>
-        <footer className='footer'>
-          {SEPARATOR}
-          <a href='https://github.com/CookPete/react-player'>GitHub</a>
-          {SEPARATOR}
-          <a href='https://www.npmjs.com/package/react-player'>npm</a>
-        </footer>
       </div>
     )
   }
