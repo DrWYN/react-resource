@@ -35,7 +35,8 @@ const routes = {
 				require('modules/surroundAbsolute'),
 				require('modules/reactLazy'),
 				require('modules/reactLazy/lazy-img-router'),
-				require('modules/reactLazy/lazy-component-router')
+				require('modules/reactLazy/lazy-component-router'),
+				require('modules/reactPlayer'),
 			])
 		}, 'dynamicRoutes')
 	}

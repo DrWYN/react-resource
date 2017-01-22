@@ -43,7 +43,7 @@ export default class LazyComponentPage extends Component{
 				dataList.map((item, index)=>{
 					return (
 						<LazyLoad once={true} key={index} offset={[-200, 0]}
-			                        placeholder={<Placeholder />} debounce={500}>
+			                        placeholder={<Placeholder />} debounce={100}>
 			                <Widget />
 			            </LazyLoad>
 					)

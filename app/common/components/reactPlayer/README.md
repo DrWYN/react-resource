@@ -1,0 +1,1 @@
+第三方组件：https://github.com/CookPete/react-player

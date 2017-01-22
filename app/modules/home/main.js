@@ -19,6 +19,7 @@ export default class Home extends Component{
 				<Link to="/scrollto">scrollTo</Link> <br/>
 				<Link to="/surroundAbsolute">surroundAbsolute</Link> <br/>
 				<Link to="/lazy-load">reactLazy</Link> <br/>
+				<Link to="/react-player">reactPlayer</Link> <br/>
 			</div>
 		);
 	}
